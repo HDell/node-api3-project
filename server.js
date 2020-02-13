@@ -7,7 +7,8 @@ server.use('/api/user', userRoute);
 server.use('/api/post', postRoute);
 
 server.get('/', (req, res) => {
-  res.send(`<h2>Let's write some middleware!</h2>`);
+  const displayBelow = {secret: process.env.SECRET};
+  res.send(`<h2>Let's write some middleware!</h2> \n ${displayBelow.secret}`);
 });
 
 //custom middleware
