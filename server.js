@@ -7,7 +7,13 @@ server.use('/api/user', userRoute);
 server.use('/api/post', postRoute);
 
 server.get('/', (req, res) => {
-  res.send(`<h2>Let's write some middleware!</h2>`);
+  const songs = [
+    {
+      id: 1,
+      name: "Final Countdown"
+    }
+  ];
+  res.status(200).json(songs);
 });
 
 //custom middleware
